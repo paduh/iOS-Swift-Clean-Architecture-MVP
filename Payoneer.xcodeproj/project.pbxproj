@@ -25,6 +25,7 @@
 		C90212EC266B68790089CE63 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212EB266B68790089CE63 /* EndPointType.swift */; };
 		C90212F4266B69120089CE63 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212F3266B69120089CE63 /* Router.swift */; };
 		C90212F9266B6A470089CE63 /* HTTPURLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212F8266B6A470089CE63 /* HTTPURLResponse+Extension.swift */; };
+		C9021301266B6D630089CE63 /* PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9021300266B6D630089CE63 /* PaymentMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C90212EB266B68790089CE63 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		C90212F3266B69120089CE63 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C90212F8266B6A470089CE63 /* HTTPURLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extension.swift"; sourceTree = "<group>"; };
+		C9021300266B6D630089CE63 /* PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		C90212BD266B5B590089CE63 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C90212FD266B6D120089CE63 /* Feature */,
 				C90212BE266B5FCD0089CE63 /* Core */,
 			);
 			path = Network;
@@ -220,6 +223,30 @@
 				C90212EB266B68790089CE63 /* EndPointType.swift */,
 			);
 			path = EndPointType;
+			sourceTree = "<group>";
+		};
+		C90212FD266B6D120089CE63 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				C90212FE266B6D1A0089CE63 /* Payment */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		C90212FE266B6D1A0089CE63 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				C90212FF266B6D220089CE63 /* EndpointType */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		C90212FF266B6D220089CE63 /* EndpointType */ = {
+			isa = PBXGroup;
+			children = (
+				C9021300266B6D630089CE63 /* PaymentMethods.swift */,
+			);
+			path = EndpointType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +388,7 @@
 				C902128C266B56BD0089CE63 /* ViewController.swift in Sources */,
 				C90212EC266B68790089CE63 /* EndPointType.swift in Sources */,
 				C90212E1266B634D0089CE63 /* NetworkResponse.swift in Sources */,
+				C9021301266B6D630089CE63 /* PaymentMethods.swift in Sources */,
 				C90212D7266B62570089CE63 /* URLParameterEncoder.swift in Sources */,
 				C90212E6266B684A0089CE63 /* NetworkRouter.swift in Sources */,
 				C9021288266B56BD0089CE63 /* AppDelegate.swift in Sources */,
