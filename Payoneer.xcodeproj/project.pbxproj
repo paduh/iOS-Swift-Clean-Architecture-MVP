@@ -20,6 +20,7 @@
 		C90212CF266B621A0089CE63 /* ParameterEncodig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212CE266B621A0089CE63 /* ParameterEncodig.swift */; };
 		C90212D7266B62570089CE63 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212D6266B62570089CE63 /* URLParameterEncoder.swift */; };
 		C90212DC266B62950089CE63 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212DB266B62950089CE63 /* JSONParameterEncoder.swift */; };
+		C90212E1266B634D0089CE63 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212E0266B634D0089CE63 /* NetworkResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C90212CE266B621A0089CE63 /* ParameterEncodig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncodig.swift; sourceTree = "<group>"; };
 		C90212D6266B62570089CE63 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		C90212DB266B62950089CE63 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		C90212E0266B634D0089CE63 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			children = (
 				C90212C0266B5FF90089CE63 /* HTTPMethod.swift */,
 				C90212C8266B60F00089CE63 /* HTTPTask.swift */,
+				C90212E0266B634D0089CE63 /* NetworkResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				C90212CF266B621A0089CE63 /* ParameterEncodig.swift in Sources */,
 				C90212C9266B60F00089CE63 /* HTTPTask.swift in Sources */,
 				C902128C266B56BD0089CE63 /* ViewController.swift in Sources */,
+				C90212E1266B634D0089CE63 /* NetworkResponse.swift in Sources */,
 				C90212D7266B62570089CE63 /* URLParameterEncoder.swift in Sources */,
 				C9021288266B56BD0089CE63 /* AppDelegate.swift in Sources */,
 				C902128A266B56BD0089CE63 /* SceneDelegate.swift in Sources */,
