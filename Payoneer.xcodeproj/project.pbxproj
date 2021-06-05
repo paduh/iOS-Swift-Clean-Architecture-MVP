@@ -15,6 +15,7 @@
 		C9021294266B56BF0089CE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9021292266B56BF0089CE63 /* LaunchScreen.storyboard */; };
 		C902129F266B56BF0089CE63 /* PayoneerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902129E266B56BF0089CE63 /* PayoneerTests.swift */; };
 		C90212AA266B56BF0089CE63 /* PayoneerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212A9266B56BF0089CE63 /* PayoneerUITests.swift */; };
+		C90212C1266B5FF90089CE63 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90212C0266B5FF90089CE63 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C90212A5266B56BF0089CE63 /* PayoneerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayoneerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90212A9266B56BF0089CE63 /* PayoneerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoneerUITests.swift; sourceTree = "<group>"; };
 		C90212AB266B56BF0089CE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C90212C0266B5FF90089CE63 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,10 @@
 		C9021286266B56BD0089CE63 /* Payoneer */ = {
 			isa = PBXGroup;
 			children = (
+				C90212BD266B5B590089CE63 /* Network */,
+				C90212BC266B5B400089CE63 /* Main */,
+				C90212BB266B5B320089CE63 /* App */,
+				C90212BA266B5B250089CE63 /* Resources */,
 				C9021287266B56BD0089CE63 /* AppDelegate.swift */,
 				C9021289266B56BD0089CE63 /* SceneDelegate.swift */,
 				C902128B266B56BD0089CE63 /* ViewController.swift */,
@@ -126,6 +132,51 @@
 				C90212AB266B56BF0089CE63 /* Info.plist */,
 			);
 			path = PayoneerUITests;
+			sourceTree = "<group>";
+		};
+		C90212BA266B5B250089CE63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C90212BB266B5B320089CE63 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C90212BC266B5B400089CE63 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C90212BD266B5B590089CE63 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C90212BE266B5FCD0089CE63 /* Core */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C90212BE266B5FCD0089CE63 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C90212BF266B5FE60089CE63 /* Service */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C90212BF266B5FE60089CE63 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C90212C0266B5FF90089CE63 /* HTTPMethod.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90212C1266B5FF90089CE63 /* HTTPMethod.swift in Sources */,
 				C902128C266B56BD0089CE63 /* ViewController.swift in Sources */,
 				C9021288266B56BD0089CE63 /* AppDelegate.swift in Sources */,
 				C902128A266B56BD0089CE63 /* SceneDelegate.swift in Sources */,
