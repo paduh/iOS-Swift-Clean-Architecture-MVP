@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class Router<EndPoint: EndPointType, T: d >: NSObject, NetworkRouter, URLSessionDelegate {
+class Router<EndPoint: EndPointType, T: Codable>: NSObject, NetworkRouter, URLSessionDelegate {
     private var task: URLSessionTask?
     typealias NetworkRouterCompletion = ((_ data: T?,_ error: String?)->())
     
