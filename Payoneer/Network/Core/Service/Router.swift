@@ -31,6 +31,7 @@ class Router<EndPoint: EndPointType, T: Codable>: NSObject, NetworkRouter, URLSe
                 }
                 if let response = response as? HTTPURLResponse {
                     let result = response.handleNetworkResponse()
+//                    print("vvvresult",  data.)
                     DispatchQueue.main.async {
                         switch result {
                         case .success:

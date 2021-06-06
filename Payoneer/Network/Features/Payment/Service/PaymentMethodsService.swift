@@ -36,6 +36,6 @@ class PaymentMethodsService {
 
 extension PaymentMethodsService: PaymentMethodsServiceDelegate {
     func paymentMethods(completion: @escaping PaymentMethodsCompletion) {
-        router.request(route: .paymentMethods, completion: completion)
+        router.request(route: .paymentMethods, logContent: true, completion: completion)
     }
 }

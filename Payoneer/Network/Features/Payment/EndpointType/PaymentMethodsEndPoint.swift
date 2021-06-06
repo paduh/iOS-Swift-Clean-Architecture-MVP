@@ -16,13 +16,13 @@ enum PaymentMethodsEndPoint {
 
 extension PaymentMethodsEndPoint: EndPointType {
     var baseUrl: URL {
-        return URL(string: "")!
+        return URL(string: "https://raw.githubusercontent.com/")!
     }
     
     var path: String {
         switch self {
         case .paymentMethods:
-            return ""
+            return "optile/checkout-android/develop/shared-test/lists/listresult.json"
         }
     }
     

@@ -12,6 +12,11 @@ import UIKit
 extension ViewControllerAssembly {
     
     static var paymentMethodsController: UIViewController {
-        UIViewController()
+        let view = PaymentMethodsController()
+        let paymentMethodService = PaymentMethodsService()
+        let presenter = PaymentMethodPresenter(paymentMethodService: paymentMethodService)
+        view.presenter = presenter
+        view.title = "Payment Methods"
+        return view
     }
 }

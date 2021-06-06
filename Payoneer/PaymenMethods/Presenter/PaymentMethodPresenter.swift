@@ -22,6 +22,10 @@ class PaymentMethodPresenter {
         self.paymentMethodService = paymentMethodService
     }
     
+    func viewDidLoad() {
+        fetchPaymentMethods()
+    }
+    
     func attachView(view: PaymentMethodView) {
         paymentMethodsView = view
     }
