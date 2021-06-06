@@ -22,7 +22,7 @@ extension PaymentMethodsEndPoint: EndPointType {
     var path: String {
         switch self {
         case .paymentMethods:
-            return "optile/checkout-android/develop/shared-test/lists/listresult.json"
+            return "optile/checkout-android/develop/shared-test/lists/listresult.jso"
         }
     }
     

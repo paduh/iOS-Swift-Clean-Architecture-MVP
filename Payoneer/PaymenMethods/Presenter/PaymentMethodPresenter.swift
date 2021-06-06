@@ -46,6 +46,7 @@ extension PaymentMethodPresenter {
             switch result {
             case .failure(let error):
                 self.paymentMethodsView?.setErrorMessage(msg: error.title)
+                self.paymentMethodsView?.setEmptyState()
             case .success(let paymentMethods):
                 guard let paymentMethods = paymentMethods else {
                     self.paymentMethodsView?.setEmptyState()

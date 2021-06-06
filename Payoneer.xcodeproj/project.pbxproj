@@ -41,6 +41,8 @@
 		C9021374266CF6FA0089CE63 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9021373266CF6FA0089CE63 /* UIImageView+Extension.swift */; };
 		C902137D266D15650089CE63 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902137C266D15650089CE63 /* TableViewDataSource.swift */; };
 		C9021387266D2ACB0089CE63 /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9021386266D2ACB0089CE63 /* LoadingController.swift */; };
+		C902138F266D31FB0089CE63 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902138E266D31FB0089CE63 /* UiViewController+Extension.swift */; };
+		C9021395266D332D0089CE63 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9021394266D332D0089CE63 /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		C9021373266CF6FA0089CE63 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C902137C266D15650089CE63 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		C9021386266D2ACB0089CE63 /* LoadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
+		C902138E266D31FB0089CE63 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
+		C9021394266D332D0089CE63 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +381,7 @@
 				C902135A266CD14F0089CE63 /* UITableView+Extension.swift */,
 				C902136E266CF4F00089CE63 /* UIView+Extension.swift */,
 				C9021373266CF6FA0089CE63 /* UIImageView+Extension.swift */,
+				C902138E266D31FB0089CE63 /* UiViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 		C9021384266D2AA80089CE63 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C9021393266D331A0089CE63 /* Resource */,
 				C9021385266D2AAD0089CE63 /* Controller */,
 			);
 			path = Shared;
@@ -412,6 +418,14 @@
 				C9021386266D2ACB0089CE63 /* LoadingController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9021393266D331A0089CE63 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C9021394266D332D0089CE63 /* Text.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C902138F266D31FB0089CE63 /* UiViewController+Extension.swift in Sources */,
 				C902133C266CCC460089CE63 /* ViewControllerAssembly.swift in Sources */,
 				C9021324266CC5E80089CE63 /* PaymentMethodPresenter.swift in Sources */,
 				C90212F9266B6A470089CE63 /* HTTPURLResponse+Extension.swift in Sources */,
@@ -565,6 +580,7 @@
 				C90212EC266B68790089CE63 /* EndPointType.swift in Sources */,
 				C90212E1266B634D0089CE63 /* NetworkResponse.swift in Sources */,
 				C9021346266CCCB40089CE63 /* Assembly+PaymenMethods.swift in Sources */,
+				C9021395266D332D0089CE63 /* Text.swift in Sources */,
 				C9021317266C11260089CE63 /* Payment.swift in Sources */,
 				C9021301266B6D630089CE63 /* PaymentMethodsEndPoint.swift in Sources */,
 				C902136F266CF4F00089CE63 /* UIView+Extension.swift in Sources */,

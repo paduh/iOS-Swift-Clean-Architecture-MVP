@@ -20,7 +20,12 @@ class PaymentMethodsController: UIViewController {
     }
     
     // MARK: Properties
-    var dataSourceDelegate: GenericTableDataSourceDelegate!
+    
+    var dataSourceDelegate: GenericTableDataSourceDelegate! {
+        didSet {
+            tableView.dataSource = dataSourceDelegate
+        }
+    }
     var paymentMethods: Payments?
     var applicable = [Applicable]() {
         didSet {
@@ -37,6 +42,32 @@ class PaymentMethodsController: UIViewController {
         tableView.dataSource = dataSourceDelegate
         presenter.attachView(view: self)
         presenter.viewDidLoad()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = UIColor.blue
+            appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+
+        } else {
+            self.navigationController?.navigationBar.barTintColor = UIColor.blue
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+        navigationItem.title = "Profile Settings"
     }
     
     deinit {
@@ -46,22 +77,27 @@ class PaymentMethodsController: UIViewController {
 
 extension PaymentMethodsController: PaymentMethodView {
     func showLoading() {
-        
+        add(loadingController)
     }
     
     func hideLoading() {
-        
+        guard self.children.count > 0 else { return }
+        let viewControllers: [UIViewController] = self.children
+        viewControllers.forEach {
+            $0.willMove(toParent: nil)
+            $0.view.removeFromSuperview()
+            $0.removeFromParent()
+        }
     }
     
     func loadPaymentMethod(paymentMethods: Payments) {
         self.paymentMethods = paymentMethods
         applicable = paymentMethods.networks?.applicable ?? []
-        self.dataSourceDelegate = handleTableViewDataSource(model: applicable)
-        tableView.dataSource = dataSourceDelegate
+        dataSourceDelegate = handleTableViewDataSource(model: applicable)
     }
     
     func setErrorMessage(msg: String) {
-        
+        showAlert(msg: msg)
     }
     
     func setEmptyState() {
@@ -78,5 +114,9 @@ extension PaymentMethodsController {
             let item = PaymentMethodsItem(payment: payment)
             cell.configureCell(item: item)
         }
+    }
+    
+    var loadingController: UIViewController {
+        ViewControllerAssembly.loadingController
     }
 }
