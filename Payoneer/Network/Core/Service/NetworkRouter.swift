@@ -7,14 +7,22 @@
 
 import Foundation
 
+// MARK:- Network Router
 
 protocol NetworkRouter {
     
     associatedtype EndPoint: EndPointType
     associatedtype T: Codable
     
-    typealias NetworkRouterCompletion = ((_ data: T?,_ error: String?)->())
+    typealias NetworkRouterCompletion = ((Result<T>) ->())
     
     func request(route: EndPoint, logContent: Bool, completion: @escaping NetworkRouterCompletion)
     func cancel()
+}
+
+// MARK:- Generic Network Router Result
+
+enum Result<T: Codable> {
+    case success(data: T)
+    case failure(error: NetworkResponse)
 }

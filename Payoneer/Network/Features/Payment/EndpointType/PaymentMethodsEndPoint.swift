@@ -1,5 +1,5 @@
 //
-//  PaymentMethods.swift
+//  PaymentMethodsEndPoint.swift
 //  Payoneer
 //
 //  Created by Aduh Perfect on 05/06/2021.
@@ -7,12 +7,14 @@
 
 import Foundation
 
-enum PaymentMethods {
+// MARK:- PaymentMethodsEndPoint
+
+enum PaymentMethodsEndPoint {
     
     case paymentMethods
 }
 
-extension PaymentMethods: EndPointType {
+extension PaymentMethodsEndPoint: EndPointType {
     var baseUrl: URL {
         return URL(string: "")!
     }

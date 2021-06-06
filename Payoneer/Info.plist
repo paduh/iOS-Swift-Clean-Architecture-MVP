@@ -62,5 +62,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>BaseUrl</key>
+	<string>https://raw.githubusercontent.com/optile/checkout-android/develop/shared-test/lists/listresult.json</string>
 </dict>
 </plist>

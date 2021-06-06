@@ -11,7 +11,7 @@ import UIKit
 
 class Router<EndPoint: EndPointType, T: Codable>: NSObject, NetworkRouter, URLSessionDelegate {
     private var task: URLSessionTask?
-    typealias NetworkRouterCompletion = ((_ data: T?,_ error: String?)->())
+    typealias NetworkRouterCompletion = ((Result<T>)->())
     
     func request(route: EndPoint, logContent: Bool = true, completion: @escaping NetworkRouterCompletion) {
         
@@ -25,7 +25,7 @@ class Router<EndPoint: EndPointType, T: Codable>: NSObject, NetworkRouter, URLSe
                 
                 if error != nil {
                     DispatchQueue.main.async {
-                        completion(nil, NetworkResponse.noNetworkConnection.rawValue)
+                        completion(.failure(error: NetworkResponse.noNetworkConnection))
                     }
                     return
                 }
@@ -35,25 +35,25 @@ class Router<EndPoint: EndPointType, T: Codable>: NSObject, NetworkRouter, URLSe
                         switch result {
                         case .success:
                             guard let responseData = data else {
-                                completion(nil, NetworkResponse.noData.rawValue)
+                                completion(.failure(error: NetworkResponse.noData))
                                 return
                             }
                             do {
                                 let apiResponse = try JSONDecoder().decode(T.self, from: responseData)
-                                completion(apiResponse,nil)
+                                completion(.success(data: apiResponse))
                             }catch {
                                 print(error)
-                                completion(nil, NetworkResponse.unableToDecode.rawValue)
+                                completion(.failure(error: NetworkResponse.unableToDecode))
                             }
-                        case .failure(let networkFailureError):
-                            completion(nil, networkFailureError)
+                        case .failure(let error):
+                            completion(.failure(error: .custom(info: error)))
                         }
                     }
                 }
             })
         } catch let error {
             DispatchQueue.main.async {
-                completion(nil, error.localizedDescription)
+                completion(.failure(error: .custom(info: error.localizedDescription)))
             }
         }
         self.task?.resume()
