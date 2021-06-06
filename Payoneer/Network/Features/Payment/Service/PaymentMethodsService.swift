@@ -9,7 +9,7 @@ import Foundation
 
 // MARK:- Payment Methods Completion
 
-typealias PaymentMethodsCompletion = ((Result<Payments>)->())
+typealias PaymentMethodsCompletion = ((Result<Payments?>)->())
 
 // MARK:- Payment Methods ServiceDelegate
 

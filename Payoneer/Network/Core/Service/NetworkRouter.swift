@@ -23,6 +23,6 @@ protocol NetworkRouter {
 // MARK:- Generic Network Router Result
 
 enum Result<T: Codable> {
-    case success(data: T)
-    case failure(error: NetworkResponse)
+    case success(_ data: T)
+    case failure(_ error: NetworkResponse)
 }
