@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias GenericTableDataSourceDelegate = UITableViewDataSource & UITableViewDelegate
+
 class PaymentMethodsController: UIViewController {
     
     // MARK: IBOutlets
@@ -18,6 +20,7 @@ class PaymentMethodsController: UIViewController {
     }
     
     // MARK: Properties
+    var dataSourceDelegate: GenericTableDataSourceDelegate!
     var paymentMethods: Payments?
     var applicable = [Applicable]() {
         didSet {
@@ -30,8 +33,8 @@ class PaymentMethodsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.delegate = dataSourceDelegate
+        tableView.dataSource = dataSourceDelegate
         presenter.attachView(view: self)
         presenter.viewDidLoad()
     }
@@ -53,6 +56,8 @@ extension PaymentMethodsController: PaymentMethodView {
     func loadPaymentMethod(paymentMethods: Payments) {
         self.paymentMethods = paymentMethods
         applicable = paymentMethods.networks?.applicable ?? []
+        self.dataSourceDelegate = handleTableViewDataSource(model: applicable)
+        tableView.dataSource = dataSourceDelegate
     }
     
     func setErrorMessage(msg: String) {
@@ -64,18 +69,14 @@ extension PaymentMethodsController: PaymentMethodView {
     }
 }
 
-// MARK: UITableViewDataSource & UITableViewDelegate
+// MARK:- Helpers
 
-extension PaymentMethodsController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return applicable.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(PaymentMethodsCell.self, for: indexPath)
-        let item = PaymentMethodsItem(payment: applicable[indexPath.row])
-        cell.configureCell(item: item)
-        return cell
+extension PaymentMethodsController {
+    func handleTableViewDataSource(model: [Applicable]) -> GenericTableDataSourceDelegate {
+        return TableViewDataSource<Applicable, PaymentMethodsCell>(
+            models: applicable) { (payment, cell) in
+            let item = PaymentMethodsItem(payment: payment)
+            cell.configureCell(item: item)
+        }
     }
 }

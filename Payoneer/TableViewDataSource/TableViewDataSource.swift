@@ -9,12 +9,12 @@ import UIKit
 
 // MARK:- Generic TableViewDataSource
 
-class TableViewDataSource<Model, Cell: UITableViewCell>: NSObject, UITableViewDataSource {
+class TableViewDataSource<Model, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     //MARK:- Properties
     
     typealias CellConfigurator = ((Model, Cell) -> Void)
-    var models: [Model]
+    var models: [Model] 
     private let cellConfigurator: CellConfigurator
     
     //MARK: Initialiser
