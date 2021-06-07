@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7OA-Gq-9HJ">
-                    <rect key="frame" x="20" y="84" width="374" height="758"/>
+                    <rect key="frame" x="20" y="160" width="374" height="682"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMk-36-hAQ">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="758"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMk-36-hAQ">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="682"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
@@ -46,13 +46,33 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCo-AJ-1pQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Methods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrQ-VD-dby">
+                            <rect key="frame" x="122.5" y="51" width="169" height="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="6cj-4E-XDc"/>
+                        <constraint firstItem="HrQ-VD-dby" firstAttribute="centerX" secondItem="YCo-AJ-1pQ" secondAttribute="centerX" id="iip-xV-7gb"/>
+                        <constraint firstAttribute="bottom" secondItem="HrQ-VD-dby" secondAttribute="bottom" constant="25" id="mDs-iH-mHl"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="7OA-Gq-9HJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="LTs-Aj-KfH"/>
                 <constraint firstItem="7OA-Gq-9HJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="Seg-xs-Jgp"/>
-                <constraint firstItem="7OA-Gq-9HJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="ujt-Zy-lsb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YCo-AJ-1pQ" secondAttribute="trailing" id="jTf-NA-MiS"/>
+                <constraint firstItem="YCo-AJ-1pQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jtd-FO-w5B"/>
+                <constraint firstItem="7OA-Gq-9HJ" firstAttribute="top" secondItem="YCo-AJ-1pQ" secondAttribute="bottom" constant="60" id="p6M-VP-gIB"/>
+                <constraint firstItem="YCo-AJ-1pQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uv3-Fo-bWM"/>
                 <constraint firstItem="7OA-Gq-9HJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wtH-Bm-ocs"/>
             </constraints>
             <point key="canvasLocation" x="-23" y="113"/>
@@ -64,6 +84,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

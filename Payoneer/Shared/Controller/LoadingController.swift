@@ -16,11 +16,7 @@ class LoadingController: UIViewController {
 
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
          view.addSubview(activityIndicator)
-
-         NSLayoutConstraint.activate([
-             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-         ])
+        activityIndicator.centerInSuperview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
